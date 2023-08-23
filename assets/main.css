@@ -463,6 +463,7 @@ ul.icons a {
 }
 
 @media screen and (max-width: 767px) {
+
   .layout-left,
   .layout-right {
     flex-direction: column;
