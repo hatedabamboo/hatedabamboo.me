@@ -22,4 +22,4 @@ jobs:
 
       - name: Upload code to S3
         run: |
-          aws s3 cp ./hatedabamboo.me/ s3://hatedabamboo.me/ --recursive
+          aws s3 cp ./source/ s3://hatedabamboo.me/ --recursive
