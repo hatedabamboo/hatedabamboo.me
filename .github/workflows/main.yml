@@ -1,12 +1,12 @@
-name: Copy Files to S3
+name: Upload code to S3
 
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
-  copy_to_s3:
+  upload_to_s3:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
 
-      - name: Copy Files to S3
+      - name: Upload code to S3
         run: |
-          aws s3 cp ./ s3://hatedabamboo.me/ --recursive
+          aws s3 cp ./hatedabamboo.me/ s3://hatedabamboo.me/ --recursive
