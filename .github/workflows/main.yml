@@ -23,3 +23,9 @@ jobs:
       - name: Upload code to S3
         run: |
           aws s3 cp ./source/ s3://hatedabamboo.me/ --recursive
+
+      - name: Invalidate stale pages
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
+            --paths "/index.html"
