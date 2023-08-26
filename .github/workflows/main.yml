@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -26,7 +28,7 @@ jobs:
 
       - name: Invalidate stale pages
         run: |
-          files=$(find source/ -type f -mmin -60 | sed 's/source//')
+          files=$(git diff --name-only HEAD HEAD~1 | grep source | sed 's/source//')
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
             --paths $files
