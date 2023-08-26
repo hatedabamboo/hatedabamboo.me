@@ -26,6 +26,7 @@ jobs:
 
       - name: Invalidate stale pages
         run: |
+          files=$(git diff --name-only HEAD HEAD~1 | grep source | sed 's/source//')
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
-            --paths "/index.html"
+            --paths $files
