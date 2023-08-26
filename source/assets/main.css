@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,300italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,300italic&display=swap);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
 @import url(https://use.fontawesome.com/releases/v5.11.2/css/all.css);
 @import url(https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css);
@@ -8,7 +8,6 @@ body {
   font-family: Montserrat, sans-serif;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: 1rem;
-  font-display: swap;
   line-height: 1.5;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
