@@ -62,11 +62,19 @@ body {
 
 @media print {
   body {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
   }
 
   h3 {
     margin-bottom: 20px;
+  }
+
+  .layout.layout-right {
+    display: grid;
+  }
+
+  .layout.layout-right .details {
+    text-align: center;
   }
 
   .layout .details h4 {
@@ -99,6 +107,15 @@ body {
 
   .col-print-12 {
     width: 100%;
+  }
+
+  a.certificate::after {
+    content: attr(desc);
+    display: block;
+  }
+
+  .certificate img {
+    display: none;
   }
 
   .no-print,
@@ -223,6 +240,10 @@ ul.icons a {
 
   .header-left {
     margin-top: 0px;
+  }
+
+  .layout.layout-right {
+    display: grid;
   }
 
   .layout .details {
