@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://hatedabamboo.me/sitemap.txt
+Sitemap: https://notes.hatedabamboo.me/sitemap.xml
