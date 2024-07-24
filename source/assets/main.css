@@ -221,8 +221,9 @@ ul.icons a {
 }
 
 .icons {
+  padding-left: 0;
   font-size: 1rem;
-  text-align: right;
+  text-align: center;
 }
 
 .header-right a {
@@ -363,7 +364,7 @@ ul.icons a {
 }
 
 .footer-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .footer-container p {
@@ -470,6 +471,7 @@ svg {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  width: 50%;
 }
 
 @media (min-width: 992px) {
@@ -480,7 +482,7 @@ svg {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 65%;
   }
 }
 
