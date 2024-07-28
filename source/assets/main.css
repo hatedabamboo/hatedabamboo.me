@@ -69,55 +69,6 @@ body {
     margin-bottom: 20px;
   }
 
-  .layout.layout-right {
-    display: grid;
-  }
-
-  .layout.layout-right .details {
-    text-align: center;
-  }
-
-  .layout .details h4 {
-    margin-bottom: 0.2rem;
-  }
-
-  p.quote {
-    text-align: left;
-    padding: 0rem 1rem;
-    margin-top: 1rem;
-  }
-
-  .col-sm-4,
-  .col-sm-6,
-  .col-sm-8 {
-    float: left;
-  }
-
-  .col-sm-8 {
-    width: 66.66666667%;
-  }
-
-  .col-sm-6 {
-    width: 50%;
-  }
-
-  .col-sm-4 {
-    width: 33.33333333%;
-  }
-
-  .col-print-12 {
-    width: 100%;
-  }
-
-  a.certificate::after {
-    content: attr(desc);
-    display: block;
-  }
-
-  .certificate img {
-    display: none;
-  }
-
   .no-print,
   .no-print * {
     display: none !important;
@@ -131,25 +82,8 @@ body {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-  margin: 0 0 0.75rem;
-}
-
-h2,
-h3,
-h4,
-h5 {
-  font-weight: inherit;
-}
-
 p {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
 }
 
 a {
@@ -162,31 +96,13 @@ a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  font-size: 4rem;
-  margin-bottom: 0.1rem;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
 h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  font-weight: inherit;
   font-size: 3rem;
   text-align: center;
   padding-bottom: 10px;
-  margin-bottom: 40px;
-}
-
-h4 {
-  font-size: 2.5rem;
-  margin-bottom: 3px;
-}
-
-h5 {
-  font-size: 2rem;
-  margin-bottom: 2px;
 }
 
 p,
@@ -243,18 +159,6 @@ ul.icons a {
     margin-top: 0px;
   }
 
-  .layout.layout-right {
-    display: grid;
-  }
-
-  .layout .details {
-    text-align: center !important;
-  }
-
-  .layout .details p {
-    text-align: center !important;
-  }
-
   .icons {
     text-align: center;
   }
@@ -263,10 +167,6 @@ ul.icons a {
     padding-left: 0px;
   }
 
-  .layout-left,
-  .layout-right {
-    flex-direction: column;
-  }
 }
 
 .profile-img {
@@ -289,80 +189,6 @@ ul.icons a {
   margin-bottom: 0;
 }
 
-.layout {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.layout .details {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.layout .details p {
-  margin-bottom: 3px;
-  font-size: 1.6rem;
-  text-align: inherit;
-}
-
-.layout .details p b {
-  font-weight: 500;
-}
-
-.layout .details a {
-  font-style: italic;
-}
-
-.layout .details .link {
-  font-size: 1.5rem;
-}
-
-.layout .details h4 {
-  margin-bottom: 0.1rem;
-  font-weight: 500;
-}
-
-.layout .details h4 a {
-  font-weight: 500;
-}
-
-.layout-right {
-  flex-direction: row-reverse;
-}
-
-.layout-right .details,
-.layout-top-right .details {
-  text-align: right;
-}
-
-.layout-left .details,
-.layout-right .details {
-  margin-bottom: 2rem;
-}
-
-.layout-top-middle,
-.layout-top,
-.layout-top-right {
-  flex-direction: column;
-}
-
-.layout-top-middle .details,
-.layout-top-middle .content,
-.layout-top .details,
-.layout-top .content,
-.layout-top-right .details,
-.layout-top-right .content {
-  width: 100%;
-}
-
-.layout-top-middle .details {
-  text-align: center;
-}
-
 .footer-container {
   margin-top: 50px;
 }
@@ -373,13 +199,6 @@ ul.icons a {
 
 .page-content {
   padding: 0;
-}
-
-p.quote {
-  font-size: 1.4rem;
-  font-style: italic;
-  padding: 1rem 2.5rem;
-  text-align: center;
 }
 
 svg {
@@ -407,65 +226,6 @@ svg {
   clear: both;
 }
 
-.col-lg-4,
-.col-lg-8,
-.col-lg-9,
-.col-md-12,
-.col-md-3,
-.col-md-6,
-.col-md-9,
-.col-sm-4,
-.col-sm-6,
-.col-sm-8,
-.col-xs-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 1200px) {
-
-  .col-lg-4,
-  .col-lg-8 {
-    float: left;
-  }
-
-  .col-lg-8 {
-    width: 66.66666667%;
-  }
-
-  .col-lg-4 {
-    width: 33.33333333%;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .col-md-12,
-  .col-md-3,
-  .col-md-6,
-  .col-md-9 {
-    float: left;
-  }
-
-  .col-md-12 {
-    width: 100%;
-  }
-
-  .col-md-9 {
-    width: 75%;
-  }
-
-  .col-md-6 {
-    width: 50%;
-  }
-
-  .col-md-3 {
-    width: 25%;
-  }
-}
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -489,32 +249,5 @@ svg {
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     width: 750px;
-  }
-
-  .col-sm-4 {
-    width: 33.33333333%;
-  }
-
-  .col-sm-6 {
-    width: 50%;
-  }
-
-  .col-sm-8 {
-    width: 66.66666667%;
-  }
-
-  .col-sm-1,
-  .col-sm-10,
-  .col-sm-11,
-  .col-sm-12,
-  .col-sm-2,
-  .col-sm-3,
-  .col-sm-4,
-  .col-sm-5,
-  .col-sm-6,
-  .col-sm-7,
-  .col-sm-8,
-  .col-sm-9 {
-    float: left;
   }
 }
