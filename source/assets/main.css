@@ -227,11 +227,9 @@ svg {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  width: 50%;
+  width: 90%;
 }
 
 @media (min-width: 992px) {
