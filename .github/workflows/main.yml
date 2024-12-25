@@ -31,4 +31,3 @@ jobs:
           aws amplify start-deployment \
             --app-id ${{ secrets.APP_ID }} \
             --branch-name main \
-            --source-url s3://hatedabamboo.me/
