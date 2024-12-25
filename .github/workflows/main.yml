@@ -24,10 +24,13 @@ jobs:
 
       - name: Upload code to S3
         run: |
-          aws s3 cp ./source/ s3://hatedabamboo.me/ --recursive
+          zip -r main source/
+          aws s3 cp main.zip s3://hatedabamboo.me/main/main.zip
 
       - name: Redeploy Amplify
         run: |
           aws amplify start-deployment \
             --app-id ${{ secrets.APP_ID }} \
             --branch-name main \
+            --source-url s3://hatedabamboo.me/main/ \
+            --source-url-type BUCKET_PREFIX
