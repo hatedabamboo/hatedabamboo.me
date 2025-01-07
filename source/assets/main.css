@@ -249,3 +249,37 @@ svg {
     width: 750px;
   }
 }
+
+.spelling {
+  position: relative;
+  border-bottom: 1px dashed #000;
+  cursor: pointer;
+}
+
+.spelling::before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  max-width: 300px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.9em;
+  line-height: 1.4;
+
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 130%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.spelling:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
