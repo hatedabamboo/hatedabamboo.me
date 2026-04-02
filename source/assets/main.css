@@ -250,6 +250,190 @@ svg {
   }
 }
 
+h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+  opacity: 0.2;
+  margin-top: 30px;
+}
+
+@media (min-width: 1200px) {
+  hr {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Hero action buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+  text-decoration: none;
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .btn:hover {
+    background: #333;
+  }
+}
+
+/* Expertise tags */
+.skill-group {
+  margin-bottom: 1rem;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-label {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 1.3rem;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Project & cert cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.project-card,
+.cert-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.project-desc:last-child {
+  margin-bottom: 0;
+}
+
+.cert-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.cert-valid {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+/* Interest pills */
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interest {
+  font-size: 1.4rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill-label {
+    color: #aaa;
+  }
+
+  .tag {
+    background: #333;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .project-card,
+  .cert-card {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .project-desc,
+  .cert-valid {
+    color: #aaa;
+  }
+
+  .interest {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .spelling {
   position: relative;
   border-bottom: 1px dashed #000;

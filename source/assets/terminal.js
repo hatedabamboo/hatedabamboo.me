@@ -14,6 +14,16 @@ const lines = [
   "> countdown --start-time=now",
 ];
 
+const clueLines = [
+  "> clue --id=01",
+  "00000000  57 61 6b 65 20 75 70 2c  20 4e 65 6f 2e 2e 2e 20",
+  "00000010  54 68 65 20 4d 61 74 72  69 78 20 68 61 73 20 79",
+  "00000020  6f 75 2e 2e 2e 20 46 6f  6c 6c 6f 77 20 74 68 65",
+  "00000030  20 72 6f 62 6f 74 73 2e",
+  "> solve",
+  "Enter the passphrase to finish the game:"
+];
+
 const terminal = document.getElementById("terminal");
 const target = new Date("2025-11-11T11:11:11Z");
 const urlParams = new URLSearchParams(window.location.search);
@@ -84,6 +94,7 @@ function startCountdown() {
 
   if (diff <= 0) {
     countdownLine.textContent = "00:00:00:00";
+    showClue();
     return;
   }
 
@@ -94,6 +105,7 @@ function startCountdown() {
     if (diff <= 0) {
       clearInterval(intervalId);
       countdownLine.textContent = "00:00:00:00";
+      showClue();
       return;
     }
 
@@ -108,6 +120,82 @@ function startCountdown() {
 
   updateCountdown();
   const intervalId = setInterval(updateCountdown, 1000);
+}
+
+function showClue() {
+  let index = 0;
+  function typeNextLine() {
+    if (index < clueLines.length) {
+      typeLine(clueLines[index], () => {
+        index++;
+        typeNextLine();
+      });
+    } else {
+      createInput();
+    }
+  }
+  typeNextLine();
+}
+
+function createInput() {
+  const promptLine = document.createElement("div");
+  promptLine.className = "line";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.style.cssText = "background:transparent;border:none;outline:none;color:#00ff66;font-family:'Courier New',monospace;font-size:16px;caret-color:#00ff66;width:800px";
+  input.autofocus = true;
+
+  promptLine.appendChild(input);
+  terminal.appendChild(promptLine);
+
+  const messageLine = document.createElement("div");
+  messageLine.className = "line";
+  terminal.appendChild(messageLine);
+
+  input.focus();
+
+  input.addEventListener("keydown", async (e) => {
+    if (e.key === "Enter") {
+      const passphrase = input.value.trim();
+
+      if (!passphrase) {
+        messageLine.textContent = "Please enter a passphrase.";
+        return;
+      }
+
+      input.disabled = true;
+      messageLine.textContent = "Checking passphrase...";
+
+      try {
+        const response = await fetch(`https://api.hatedabamboo.me/arg?key=${encodeURIComponent(passphrase)}`, {
+          method: 'GET',
+          mode: 'cors'
+        });
+
+        if (response.status === 200) {
+          const data = await response.json();
+          messageLine.textContent = data.message;
+        } else if (response.status === 406) {
+          const data = await response.json();
+          messageLine.textContent = data.message || "Access denied. Try again.";
+          input.disabled = false;
+          input.value = "";
+          input.focus();
+        } else {
+          messageLine.textContent = `Unexpected response: ${response.status}`;
+          input.disabled = false;
+          input.value = "";
+          input.focus();
+        }
+      } catch (error) {
+        messageLine.textContent = `Error: ${error.message}`;
+        input.disabled = false;
+        input.value = "";
+        input.focus();
+      }
+    }
+  });
 }
 
 startTyping();
