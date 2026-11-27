@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="colortheme adaptive">
 
 <head>
     <meta charset="utf-8" />
@@ -18,11 +18,24 @@
             --font-mono: 'Nimbus Mono PS', 'Courier New', monospace;
             --color-white: #fff;
             --color-primary: #0091eb;
+            --color-black: #222;
         }
 
         html {
             box-sizing: border-box;
             background-color: var(--color-white);
+        }
+
+        .colortheme {
+            background: var(--color-white);
+            color: var(--color-black);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .colortheme.adaptive {
+                background: var(--color-black);
+                color: var(--color-white);
+            }
         }
 
         body {
@@ -101,7 +114,9 @@
             <a target="_blank" href="https://www.linkedin.com/in/hatedabamboo">linkedin</a> ∙
             <a target="_blank" href="https://t.me/hatedabamboo">telegram</a>
         </p>
-
+        <p style="color: var(--color-white); font-size: 0.7rem;">
+            Do you know who also loved the dark theme?
+        </p>
 </body>
 
 </html>
